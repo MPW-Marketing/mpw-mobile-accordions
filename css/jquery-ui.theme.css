@@ -15,7 +15,7 @@
 /* Component containers
 ----------------------------------*/
 .ui-widget {
-	font-family: Raleway;
+	font-family: "Open Sans", arial, sans-serif;;
 	font-size: 1.1em;
 }
 .ui-widget .ui-widget {
@@ -25,7 +25,7 @@
 .ui-widget select,
 .ui-widget textarea,
 .ui-widget button {
-	font-family: Raleway;
+	font-family: "Open Sans", arial, sans-serif;;
 	font-size: 1em;
 }
 .ui-widget-content {
@@ -39,11 +39,11 @@
 .ui-widget-header {
 	border: 1px solid #D4DADE;
 	background: #F2F4F6 url("images/ui-bg_highlight-soft_75_F2F4F6_1x100.png") 50% 50% repeat-x;
-	color: #980f3a;
+	color: #486720;
 	font-weight: bold;
 }
 .ui-widget-header a {
-	color: #980f3a;
+	color: #486720;
 }
 
 /* Interaction states
@@ -54,12 +54,12 @@
 	border: 1px solid #d3d3d3;
 	background: #F2F4F6 url("images/ui-bg_glass_75_F2F4F6_1x400.png") 50% 50% repeat-x;
 	font-weight: normal;
-	color: #980f3a;
+	color: #486720;
 }
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
-	color: #980f3a;
+	color: #486720;
 	text-decoration: none;
 }
 .ui-state-hover,
@@ -163,13 +163,13 @@
 }
 .ui-icon,
 .ui-widget-content .ui-icon {
-	background-image: url("images/ui-icons_666e74_256x240.png");
+	background-image: url("images/ui-icons_346911_256x240");
 }
 .ui-widget-header .ui-icon {
-	background-image: url("images/ui-icons_980f3a_256x240.png");
+	background-image: url("images/ui-icons_346911_256x240");
 }
 .ui-state-default .ui-icon {
-	background-image: url("images/ui-icons_980f3a_256x240.png");
+	background-image: url("images/ui-icons_346911_256x240");
 }
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon {
