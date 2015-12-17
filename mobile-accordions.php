@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: mobile_accordion_sections
-Description: put content in an accordion on mobile only, wrap content in <article class='accordion'> and add [acco_script] at end of content and will create accordions with headings tags as titles and divs right after headings as contents
+Description: put content in an accordion on mobile only, wrap content in <section class='accordion'> and add [acco_script] at end of content and will create accordions with headings tags as titles and divs right after headings as contents
 Version: 0.1
 Author: 
 License: GPL2
