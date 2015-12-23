@@ -68,7 +68,7 @@ jQuery(document).ready(function(){
         is_accordion = true;
         } else if (jqUpdateSize() > 768 && is_accordion){
                             console.log('resize large accordion');
-            jQuery('.accordion').accordion('destroy');
+            jQuery('.accordion-m').accordion('destroy');
             is_accordion = false;
         }
     });
