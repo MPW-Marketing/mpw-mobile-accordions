@@ -81,11 +81,13 @@ add_shortcode('acco_script', 'enqueue_acco_script' );
 
 function mpw_constant_accordion_script () {
         wp_enqueue_script( 'jquery-ui' );
-        $cont = "<script>
+        $cont = "<script>jQuery(document).ready(function(){
             jQuery('.accordion-c').accordion({
             collapsible: true,
             active: false
-        });";
+        });
+});
+</script>";
     return do_shortcode($cont);
 }
 
