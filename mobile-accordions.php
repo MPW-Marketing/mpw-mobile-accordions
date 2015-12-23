@@ -79,6 +79,18 @@ jQuery(document).ready(function(){
 }
 add_shortcode('acco_script', 'enqueue_acco_script' );
 
+function mpw_constant_accordion_script () {
+        wp_enqueue_script( 'jquery-ui' );
+        $cont = "<script>
+            jQuery('.accordion-c').accordion({
+            collapsible: true,
+            active: false
+        });";
+    return do_shortcode($cont);
+}
+
+add_shortcode('acco_script_c', 'mpw_constant_accordion_script' );
+
 function mpw_accordion_launch () {
     $cont = "<script>
 function jqUpdateSize(){
