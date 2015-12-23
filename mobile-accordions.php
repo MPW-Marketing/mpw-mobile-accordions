@@ -79,6 +79,58 @@ jQuery(document).ready(function(){
 }
 add_shortcode('acco_script', 'enqueue_acco_script' );
 
+function enqueue_acco_script_old () {
+    wp_enqueue_script( 'jquery-ui' );
+    $mpw_accordion_script = "<style>
+.accordion .alignright {
+    margin-bottom: 10px;
+}
+.mobile-only {display:none;}
+@media screen and (max-width:767px){
+    .accordion ul {clear: both;}
+    .mobile-only {display:initial;}
+}
+</style>
+<script>
+function jqUpdateSize(){
+    // Get the dimensions of the viewport
+    var width = jQuery(window).width();
+    var height = jQuery(window).height();
+    console.log(width);
+    return width;
+};
+var is_accordion = false;
+jQuery(document).ready(function(){
+    var width = jqUpdateSize();
+    if (width < 769){
+        console.log('mobile');
+        jQuery('.accordion').accordion({
+            collapsible: true,
+            active: false
+        });
+    is_accordion = true;
+    }
+    jQuery(window).resize(function() {
+        if (jqUpdateSize() < 769 && !is_accordion){
+                console.log('resize small no accordion');
+            jQuery('.accordion').accordion({
+                collapsible: true,
+                active: false
+            });
+        is_accordion = true;
+        } else if (jqUpdateSize() > 768 && is_accordion){
+                            console.log('resize large accordion');
+            jQuery('.accordion').accordion('destroy');
+            is_accordion = false;
+        }
+    });
+});
+</script>";
+    $cont = $mpw_accordion_script;
+    return do_shortcode($cont);
+}
+add_shortcode('acco_script_old', 'enqueue_acco_script_old' );
+
 function mpw_constant_accordion_script () {
         wp_enqueue_script( 'jquery-ui' );
         $cont = "<script>jQuery(document).ready(function(){
