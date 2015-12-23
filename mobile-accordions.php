@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: mobile_accordion_sections
-Description: put content in an accordion on mobile only, wrap content in <section class='accordion'> and add [acco_script] at end of content and will create accordions with headings tags as titles and divs right after headings as contents
-Version: 0.1
+Description: put content in an accordion on mobile only, wrap content in <code> < section class='accordion-m'> and add [acco_script] at end of content and will create accordions with headings tags as titles and divs right after headings as contents
+Version: 0.2
 Author: 
 License: GPL2
 */
@@ -52,7 +52,7 @@ jQuery(document).ready(function(){
     var width = jqUpdateSize();
     if (width < 769){
         console.log('mobile');
-        jQuery('.accordion').accordion({
+        jQuery('.accordion-m').accordion({
             collapsible: true,
             active: false
         });
@@ -61,7 +61,7 @@ jQuery(document).ready(function(){
     jQuery(window).resize(function() {
         if (jqUpdateSize() < 769 && !is_accordion){
                 console.log('resize small no accordion');
-            jQuery('.accordion').accordion({
+            jQuery('.accordion-m').accordion({
                 collapsible: true,
                 active: false
             });
@@ -93,88 +93,7 @@ function mpw_constant_accordion_script () {
 
 add_shortcode('acco_script_c', 'mpw_constant_accordion_script' );
 
-function mpw_accordion_launch () {
-    $cont = "<script>
-function jqUpdateSize(){
-    // Get the dimensions of the viewport
-    var width = jQuery(window).width();
-    var height = jQuery(window).height();
-    console.log(width);
-    return width;
-};
-var is_accordion = false;
-jQuery(document).ready(function(){
-    jqUpdateSize();
-    if (jqUpdateSize() < 769){
-        console.log('mobile');
-        jQuery('.accordion').accordion({
-            collapsible: true,
-            active: false
-        });
-    is_accordion = true;
-    }
-    jQuery(window).resize(function() {
-        if (jqUpdateSize() < 769 && !is_accordion){
-            jQuery('.accordion').accordion({
-                collapsible: true,
-                active: false
-            });
-        is_accordion = true;
-        } else if (jqUpdateSize() > 768 && is_accordion){
-            jQuery('.accordion').accordion('destroy');
-            is_accordion = false;
-        }
-    });
-});
-</script>";
-return do_shortcode( $cont );
-}
 
-add_shortcode( 'launch_accordion', 'mpw_accordion_launch' );
-
-$mpw_accordion_script = "<style>
-.accordion .alignright {
-    margin-bottom: 10px;
-}
-.mobile-only {display:none;}
-@media screen and (max-width:767px){
-    .accordion ul {clear: both;}
-    .mobile-only {display:initial;}
-}
-</style>
-<script>
-function jqUpdateSize(){
-    // Get the dimensions of the viewport
-    var width = jQuery(window).width();
-    var height = jQuery(window).height();
-    console.log(width);
-    return width;
-};
-var is_accordion = false;
-jQuery(document).ready(function(){
-    jqUpdateSize();
-    if (jqUpdateSize() < 769){
-        console.log('mobile');
-        jQuery('.accordion').accordion({
-            collapsible: true,
-            active: false
-        });
-    is_accordion = true;
-    }
-    jQuery(window).resize(function() {
-        if (jqUpdateSize() < 769 && !is_accordion){
-            jQuery('.accordion').accordion({
-                collapsible: true,
-                active: false
-            });
-        is_accordion = true;
-        } else if (jqUpdateSize() > 768 && is_accordion){
-            jQuery('.accordion').accordion('destroy');
-            is_accordion = false;
-        }
-    });
-});
-</script>";
 
 function mpw_acco_scripts_method() {
     wp_register_script(
