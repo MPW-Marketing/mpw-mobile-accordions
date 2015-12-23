@@ -30,12 +30,12 @@ License: GPL2
 function enqueue_acco_script () {
     wp_enqueue_script( 'jquery-ui' );
     $mpw_accordion_script = "<style>
-.accordion .alignright {
+.accordion-m .alignright, .accordion-c .align-right {
     margin-bottom: 10px;
 }
 .mobile-only {display:none;}
 @media screen and (max-width:767px){
-    .accordion ul {clear: both;}
+    .accordion-c ul, .accordion-m ul {clear: both;}
     .mobile-only {display:initial;}
 }
 </style>
